@@ -10,10 +10,10 @@ regions = df.region.unique()
 regions_select = st.multiselect(label='region', options=regions)
 
 
-
 plot = alt.Chart(df[(df.date == 2020)&(df.region.isin(regions_select))]).mark_point().encode(
     x = "gdp_capita",
     y = "fertility",
     color='region'
 )
-st.altair_chart(plot)
+st.altair_chart(plot, use_container_width = True)
+
