@@ -7,8 +7,9 @@ df['gdp_capita'] = df.gdp / df.population
 df.head()
 
 regions = df.region.unique()
-regions_select = st.multiselect(label='region', options=regions)
+regions_select = st.multiselect(label='region', options=regions, default=regions)
 
+st.title('Fertility rates vs gdp_capita')
 
 plot = alt.Chart(df[(df.date == 2020)&(df.region.isin(regions_select))]).mark_point().encode(
     x = "gdp_capita",
