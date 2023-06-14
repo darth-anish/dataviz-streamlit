@@ -18,3 +18,5 @@ plot = alt.Chart(df[(df.date == 2020)&(df.region.isin(regions_select))]).mark_po
 )
 st.altair_chart(plot, use_container_width = True)
 
+st.dataframe(df)
+
